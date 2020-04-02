@@ -5,5 +5,18 @@
  */
 
 module.exports = {
-  /* Your site config here */
+    plugins: [
+        `gatsby-plugin-styled-components`,
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Poppins`,
+                        variants: [`300`, `300i`, `400`, `500`, `600`, `700`],
+                    },
+                ],
+            },
+        },
+    ],
 }
