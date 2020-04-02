@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 const IconWrapper = styled.div`
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     margin: 5rem auto 0;
 
     display: flex;
@@ -14,7 +14,7 @@ const IconWrapper = styled.div`
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--primary);
 `
 
