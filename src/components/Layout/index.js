@@ -4,14 +4,16 @@ import { ThemeProvider } from 'styled-components'
 import themes from '../../styles/themes'
 import GlobalStyles from '../../styles/global'
 
+import { Container, Wrapper } from './elements'
+
 const Layout = ({ children }) => {
     const { dark } = themes.title
 
-    console.log(dark)
-
     return (
         <ThemeProvider theme={dark}>
-            {children}
+            <Container>
+                <Wrapper>{children}</Wrapper>
+            </Container>
             <GlobalStyles />
         </ThemeProvider>
     )
