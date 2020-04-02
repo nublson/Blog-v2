@@ -50,18 +50,19 @@ const Tags = styled.div`
     }
 `
 
-const BlogPost = () => {
+const BlogPost = ({ title, date, author, tags }) => {
     return (
         <Container>
-            <Title>Node tests with Jest applying TDD</Title>
+            <Title>{title}</Title>
             <Info>
-                March 27, 2020, by <span>nubelsondev</span>
+                {date}, by <span>{author}</span>
             </Info>
 
             <Tags>
-                <p>#NodeJS</p>
-                <p>#Jest</p>
-                <p>#TDD</p>
+                {tags.map((tag, index) => {
+                    const hashtag = `#${tag}`
+                    return <p key={index}> {hashtag} </p>
+                })}
             </Tags>
         </Container>
     )
