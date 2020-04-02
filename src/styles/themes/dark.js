@@ -6,7 +6,7 @@ export default {
         text: '#CCCCCC',
         text_highlight: '#F9F9F9',
         background: '#2b2b2b',
-        background_highlight: '#2b2b2b',
+        background_highlight: '#232323',
     },
     mediaQueries,
 }

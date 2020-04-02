@@ -1,9 +1,15 @@
 import React from 'react'
 
 import Header from '../../components/Header'
+import BlogList from '../../components/BlogList'
 
 const Home = () => {
-    return <Header />
+    return (
+        <>
+            <Header />
+            <BlogList />
+        </>
+    )
 }
 
 export default Home

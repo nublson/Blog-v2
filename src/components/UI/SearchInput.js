@@ -6,7 +6,7 @@ const Input = styled.input`
     text-align: center;
     font-family: inherit;
     font-size: 1.4rem;
-    color: var(--text);
+    color: var(--text-highlight);
     padding: 0.5rem 1rem;
     background-color: transparent;
     border: 1px solid var(--primary);
