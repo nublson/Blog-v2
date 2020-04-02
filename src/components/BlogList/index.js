@@ -1,19 +1,23 @@
 import React from 'react'
 
-import { Container } from './styles'
+import { BlogPosts } from './styles'
 
 import BlogPost from '../UI/BlogPost'
+import { MoreIcon } from '../UI/Icons'
 
 const BlogList = () => {
     return (
-        <Container>
-            <BlogPost />
-            <BlogPost />
-            <BlogPost />
-            <BlogPost />
-            <BlogPost />
-            <BlogPost />
-        </Container>
+        <>
+            <BlogPosts>
+                <BlogPost />
+                <BlogPost />
+                <BlogPost />
+                <BlogPost />
+                <BlogPost />
+                <BlogPost />
+            </BlogPosts>
+            <MoreIcon />
+        </>
     )
 }
 

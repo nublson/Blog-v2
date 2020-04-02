@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const BlogPosts = styled.div`
     max-width: 124rem;
     margin: 10rem auto 0;
 
