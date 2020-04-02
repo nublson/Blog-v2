@@ -18,5 +18,21 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/images`,
+            },
+        },
+        `gatsby-transformer-sharp`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                useMozJpeg: false,
+                stripMetadata: true,
+                defaultQuality: 90,
+            },
+        },
     ],
 }
