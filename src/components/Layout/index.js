@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import themes from '../../styles/themes'
 import GlobalStyles from '../../styles/global'
@@ -9,6 +9,11 @@ import { Container, Wrapper } from './elements'
 import Header from '../Header'
 import Footer from '../Footer'
 
+const SmallWrapper = styled.div`
+    max-width: 124rem;
+    margin: 0 auto;
+`
+
 const Layout = ({ children }) => {
     const { dark } = themes.title
 
@@ -17,7 +22,7 @@ const Layout = ({ children }) => {
             <Container>
                 <Wrapper>
                     <Header />
-                    {children}
+                    <SmallWrapper>{children}</SmallWrapper>
                     <Footer />
                 </Wrapper>
             </Container>

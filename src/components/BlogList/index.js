@@ -1,24 +1,47 @@
 import React from 'react'
-
+import { useStaticQuery, graphql } from 'gatsby'
 import { BlogPosts } from './styles'
 
 import BlogPost from '../UI/BlogPost'
 import { MoreIcon } from '../UI/Icons'
 
-import array from '../../utils/api.json'
-
 const BlogList = () => {
-    const { data } = array
+    const data = useStaticQuery(graphql`
+        query {
+            allMarkdownRemark(
+                sort: { fields: frontmatter___date, order: DESC }
+            ) {
+                edges {
+                    node {
+                        id
+                        frontmatter {
+                            title
+                            date(formatString: "MMMM DD, YYYY")
+                            author
+                            tags
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+    const { edges } = data.allMarkdownRemark
+
     return (
         <>
             <BlogPosts>
-                {data.map((post, index) => (
+                {edges.map(({ node: post }) => (
                     <BlogPost
-                        key={index}
-                        title={post.title}
-                        date={post.date}
-                        author={post.author}
-                        tags={post.tags}
+                        key={post.id}
+                        title={post.frontmatter.title}
+                        date={post.frontmatter.date}
+                        author={post.frontmatter.author}
+                        tags={post.frontmatter.tags}
+                        url={post.fields.slug}
                     />
                 ))}
             </BlogPosts>

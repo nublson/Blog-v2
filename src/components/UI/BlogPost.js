@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Tags from './Tags'
 
-const Container = styled.div`
+const Container = styled(Link)`
     position: relative;
     width: 32.5rem;
     height: 25rem;
     text-align: left;
+    text-decoration: none;
+    color: var(--text);
     border-radius: var(--radius);
     padding: 2rem;
     background-color: var(--background-highlight);
@@ -31,9 +34,9 @@ export const Info = styled.p`
     }
 `
 
-const BlogPost = ({ title, date, author, tags }) => {
+const BlogPost = ({ title, date, author, tags, url }) => {
     return (
-        <Container>
+        <Container to={url}>
             <Title>{title}</Title>
             <Info>
                 {date}, by <span>{author}</span>
