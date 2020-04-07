@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
         line-height: 1.7;
+        font-size: 1.6rem;
         --primary: ${({ theme }) => theme.colors.primary};
         --text: ${({ theme }) => theme.colors.text};
         --text-highlight: ${({ theme }) => theme.colors.text_highlight};

@@ -9,6 +9,7 @@ const StyledTags = styled.div`
     text-transform: uppercase;
     position: ${props => props.card && 'absolute'};
     bottom: 2rem;
+    margin-bottom: ${props => !props.card && '3rem'};
 
     p:not(:last-child) {
         margin-right: 1rem;

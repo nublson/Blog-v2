@@ -17,12 +17,12 @@ const Container = styled(Link)`
     box-shadow: 2.5px 5px 8.4px rgba(0, 0, 0, 0.25);
 `
 
-export const Title = styled.h2`
+export const Title = styled.h1`
     font-size: ${props => (props.size ? `${props.size}rem` : '1.8rem')};
     color: var(--text-highlight);
     font-weight: 600;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: ${props => (props.post ? '1rem' : '2rem')};
 `
 
 export const Info = styled.p`

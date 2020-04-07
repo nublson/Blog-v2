@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
     plugins: [
         `gatsby-plugin-styled-components`,
@@ -32,7 +26,6 @@ module.exports = {
                 path: `${__dirname}/src/content/blog`,
             },
         },
-        `gatsby-transformer-remark`,
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-plugin-sharp`,
@@ -40,6 +33,51 @@ module.exports = {
                 useMozJpeg: false,
                 stripMetadata: true,
                 defaultQuality: 90,
+            },
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    `gatsby-remark-relative-images`,
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 1160,
+                            linkImagesToOriginal: false,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            classPrefix: 'language-',
+                            inlineCodeMarker: '›',
+                            aliases: {},
+                            showLineNumbers: false,
+                            noInlineHighlight: false,
+                            languageExtensions: [
+                                {
+                                    language: 'superscript',
+                                    extend: 'javascript',
+                                    definition: {
+                                        superscript_types: /(SuperType)/,
+                                    },
+                                    insertBefore: {
+                                        function: {
+                                            superscript_keywords: /(superif|superelse)/,
+                                        },
+                                    },
+                                },
+                            ],
+                            prompt: {
+                                user: 'root',
+                                host: 'localhost',
+                                global: false,
+                            },
+                            escapeEntities: {},
+                        },
+                    },
+                ],
             },
         },
     ],

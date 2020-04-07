@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { BlogPosts } from './styles'
 
 import BlogPost from '../UI/BlogPost'
-import { MoreIcon } from '../UI/Icons'
 
 const BlogList = () => {
     const data = useStaticQuery(graphql`
@@ -45,7 +44,6 @@ const BlogList = () => {
                     />
                 ))}
             </BlogPosts>
-            <MoreIcon />
         </>
     )
 }

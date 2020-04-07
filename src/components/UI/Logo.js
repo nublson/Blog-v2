@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Image = styled.img``
+const StyledLink = styled(Link)`
+    height: 6rem;
+`
 
 const Logo = () => {
     const { file } = useStaticQuery(graphql`
@@ -15,7 +18,11 @@ const Logo = () => {
 
     const { publicURL: logo } = file
 
-    return <Image src={logo} alt="nubelsondevBlog" />
+    return (
+        <StyledLink to="/">
+            <img src={logo} alt="nubelsondevBlog" />
+        </StyledLink>
+    )
 }
 
 export default Logo
