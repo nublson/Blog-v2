@@ -10,13 +10,13 @@
             "title": "Javascript Development Environment: VSCode, Terminal and more",
             "date": "March 20, 2020",
             "author": "nubelsondev",
-            "tags": ["vscode", "terminal", "development"]
+            "tags": ["vscode", "terminal", "dev"]
         },
         {
             "title": "Create a To-Do application with React Redux",
             "date": "March 10, 2020",
             "author": "nubelsondev",
-            "tags": ["redux", "react", "development"]
+            "tags": ["redux", "react", "dev"]
         },
         {
             "title": "Understand Design Patterns once and for all",
@@ -28,7 +28,7 @@
             "title": "Creating a login React application with Firebase authentication",
             "date": "March 06, 2020",
             "author": "nubelsondev",
-            "tags": ["firebase", "react", "authentication"]
+            "tags": ["firebase", "react", "auth"]
         },
         {
             "title": "Configuring a NodeJS application with SQL using Sequelize",
