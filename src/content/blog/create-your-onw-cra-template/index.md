@@ -138,3 +138,10 @@ $ yarn create react-app your-project-name --template nubelsondev
 O comando npm instala a versão estável mais recente do CRA a partir do npm
 
 O parámetro —template aponta para o template que você deseja usar, note que o prefixo cra-template- é omitido.
+
+```javascript
+const name = 'Nubelson'
+const age = 23
+
+console.log(`My name is ${name} and I am ${age} years old!`)
+```

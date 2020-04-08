@@ -1,1 +1,1 @@
-require('prismjs/themes/prism-okaidia.css')
+import 'gatsby-syntax-highlights-dracula'

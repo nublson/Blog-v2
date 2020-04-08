@@ -40,10 +40,7 @@ const BlogTemplate = ({ data }) => {
         <Layout>
             <Container>
                 <Tags tags={tags} />
-                <Title post size="2.4">
-                    {' '}
-                    {title}{' '}
-                </Title>
+                <Title post> {title} </Title>
                 <Info size="1.5">
                     {' '}
                     {date}, by <span>{author}</span>{' '}

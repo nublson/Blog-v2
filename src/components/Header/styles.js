@@ -7,4 +7,12 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media ${({ theme }) => theme.mediaQueries.small} {
+        margin-bottom: 8rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQueries.smallest} {
+        margin-bottom: 7rem;
+    }
 `

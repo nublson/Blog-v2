@@ -12,6 +12,16 @@ const GlobalStyles = createGlobalStyle`
 
     html{
         font-size: 62.5%;
+
+        @media ${props => props.theme.mediaQueries.largest} {
+            font-size: 60%;
+        }
+        @media ${props => props.theme.mediaQueries.large} {
+            font-size: 57.5%;
+        }
+        @media ${props => props.theme.mediaQueries.small} {
+            font-size: 55%;
+        }
     }
 
     body{
@@ -29,6 +39,15 @@ const GlobalStyles = createGlobalStyle`
         --radius: 2rem;
         color: var(--text);
         background-color: var(--background);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--text-highlight);
     }
 `
 

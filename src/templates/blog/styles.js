@@ -13,20 +13,23 @@ export const Thumbnail = styled.div`
     background-size: cover;
     background-position: center;
     border-radius: var(--radius);
+
+    @media ${({ theme }) => theme.mediaQueries.small} {
+        height: 40rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQueries.smaller} {
+        height: 30rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQueries.smallest} {
+        height: 20rem;
+    }
 `
 
 export const StyledBody = styled.div`
     & > * {
         margin: 1rem 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--text-highlight);
     }
 
     img {
@@ -53,5 +56,9 @@ export const StyledBody = styled.div`
         &:active {
             text-decoration: underline transparent;
         }
+    }
+
+    pre {
+        padding: 1rem 2rem;
     }
 `

@@ -18,7 +18,7 @@ const Container = styled(Link)`
 `
 
 export const Title = styled.h1`
-    font-size: ${props => (props.size ? `${props.size}rem` : '1.8rem')};
+    font-size: ${props => (props.post ? `3rem` : '1.8rem')};
     color: var(--text-highlight);
     font-weight: 600;
     display: inline-block;
@@ -31,6 +31,10 @@ export const Info = styled.p`
     span {
         font-weight: bold;
         color: var(--primary);
+    }
+
+    @media ${({ theme }) => theme.mediaQueries.small} {
+        font-size: 1.3rem;
     }
 `
 
