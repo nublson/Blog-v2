@@ -26,7 +26,7 @@ export const Title = styled.h1`
 `
 
 export const Info = styled.p`
-    font-size: ${props => (props.size ? `${props.size}rem` : '1.3rem')};
+    font-size: ${props => (props.size ? `${props.size}rem` : '1.5rem')};
 
     span {
         font-weight: bold;
