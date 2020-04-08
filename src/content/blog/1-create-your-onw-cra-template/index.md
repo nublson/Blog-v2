@@ -28,7 +28,7 @@ Remova tudo o que você não precisa do CRA e adicione tudo o que você precisa
 
 ![image](./thumbnail.jpg)
 
-Veja o código [aqui](htpps://github.com/nubelsondev).
+Veja o código [aqui](https://github.com/nubelsondev).
 
 ### 3- Create a template
 
