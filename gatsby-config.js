@@ -7,7 +7,7 @@ module.exports = {
         social: {
             username: 'nubelsondev',
         },
-        siteUrl: `https://blog.nubelson.dev`,
+        siteUrl: `https://www.blog.nubelson.dev`,
         imageShare: `share.png`,
     },
     plugins: [
