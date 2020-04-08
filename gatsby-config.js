@@ -54,7 +54,7 @@ module.exports = {
                             inlineCodeMarker: '›',
                             aliases: {},
                             showLineNumbers: false,
-                            noInlineHighlight: false,
+                            noInlineHighlight: true,
                             languageExtensions: [
                                 {
                                     language: 'superscript',
