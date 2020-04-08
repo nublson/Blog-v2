@@ -6,6 +6,7 @@ import GlobalStyles from '../../styles/global'
 
 import { Container, Wrapper } from './elements'
 
+import SEO from '../utils/SEO'
 import Header from '../Header'
 import Footer from '../Footer'
 
@@ -21,6 +22,7 @@ const Layout = ({ children }) => {
         <ThemeProvider theme={dark}>
             <Container>
                 <Wrapper>
+                    <SEO />
                     <Header />
                     <SmallWrapper>{children}</SmallWrapper>
                     <Footer />

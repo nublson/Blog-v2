@@ -1,6 +1,20 @@
 module.exports = {
+    siteMetadata: {
+        title: `Blog | Nubelsondev`,
+        description: `Learn Javascript, Node, React and React Native by building things`,
+        keywords: `Nubelson Blog, Nubelson, Fernandes, Nubel blog, nubelsondev, full-stack developer, javascript, node, react, react native, front-end developer, web developer, mobile developer, designer`,
+        author: `Nubelson Fernandes`,
+        social: {
+            username: 'nubelsondev',
+        },
+        siteUrl: `https://blog.nubelson.dev`,
+        imageShare: `share.png`,
+    },
     plugins: [
         `gatsby-plugin-styled-components`,
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sitemap`,
+        `gatsby-plugin-robots-txt`,
         {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {
@@ -77,6 +91,28 @@ module.exports = {
                             escapeEntities: {},
                         },
                     },
+                    {
+                        resolve: `gatsby-plugin-nprogress`,
+                        options: {
+                            // Setting a color is optional.
+                            color: `#F9D342`,
+                            // Disable the loading spinner.
+                            showSpinner: false,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-plugin-manifest`,
+                        options: {
+                            name: `Blog | Nubelsondev`,
+                            short_name: `Blog`,
+                            start_url: `/`,
+                            background_color: `#2b2b2b`,
+                            theme_color: `#F9D342`,
+                            display: `minimal-ui`,
+                            icon: `src/images/icon.svg`,
+                        },
+                    },
+                    `gatsby-plugin-offline`,
                 ],
             },
         },
