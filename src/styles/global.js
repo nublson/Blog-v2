@@ -28,8 +28,8 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
-        line-height: 1.7;
-        font-size: 1.6rem;
+        line-height: 1.6;
+        font-size: 1.7rem;
         --primary: ${({ theme }) => theme.colors.primary};
         --text: ${({ theme }) => theme.colors.text};
         --text-highlight: ${({ theme }) => theme.colors.text_highlight};

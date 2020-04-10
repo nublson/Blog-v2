@@ -13,6 +13,7 @@ import Footer from '../Footer'
 const SmallWrapper = styled.div`
     max-width: 124rem;
     margin: 0 auto;
+    width: 100%;
 `
 
 const Layout = ({ children }) => {
@@ -20,9 +21,9 @@ const Layout = ({ children }) => {
 
     return (
         <ThemeProvider theme={dark}>
+            <SEO />
             <Container>
                 <Wrapper>
-                    <SEO />
                     <Header />
                     <SmallWrapper>{children}</SmallWrapper>
                     <Footer />

@@ -7,5 +7,9 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
     width: 100%;
+    min-height: 100vh;
     padding: 6rem 2rem 5rem;
+
+    display: flex;
+    flex-direction: column;
 `

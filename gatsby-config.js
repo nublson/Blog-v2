@@ -62,6 +62,13 @@ module.exports = {
                         },
                     },
                     {
+                        resolve: 'gatsby-remark-external-links',
+                        options: {
+                            target: '_blank',
+                            rel: 'noreferrer',
+                        },
+                    },
+                    {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             classPrefix: 'language-',
@@ -91,30 +98,30 @@ module.exports = {
                             escapeEntities: {},
                         },
                     },
-                    {
-                        resolve: `gatsby-plugin-nprogress`,
-                        options: {
-                            // Setting a color is optional.
-                            color: `#F9D342`,
-                            // Disable the loading spinner.
-                            showSpinner: false,
-                        },
-                    },
-                    {
-                        resolve: `gatsby-plugin-manifest`,
-                        options: {
-                            name: `Blog | Nubelsondev`,
-                            short_name: `Blog`,
-                            start_url: `/`,
-                            background_color: `#2b2b2b`,
-                            theme_color: `#F9D342`,
-                            display: `minimal-ui`,
-                            icon: `src/images/icon.svg`,
-                        },
-                    },
-                    `gatsby-plugin-offline`,
                 ],
             },
         },
+        {
+            resolve: `gatsby-plugin-nprogress`,
+            options: {
+                // Setting a color is optional.
+                color: `#F9D342`,
+                // Disable the loading spinner.
+                showSpinner: false,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `Blog | Nubelsondev`,
+                short_name: `Blog`,
+                start_url: `/`,
+                background_color: `#2b2b2b`,
+                theme_color: `#F9D342`,
+                display: `minimal-ui`,
+                icon: `src/images/icon.svg`,
+            },
+        },
+        `gatsby-plugin-offline`,
     ],
 }

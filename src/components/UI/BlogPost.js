@@ -34,7 +34,7 @@ export const Info = styled.p`
     }
 
     @media ${({ theme }) => theme.mediaQueries.small} {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 `
 

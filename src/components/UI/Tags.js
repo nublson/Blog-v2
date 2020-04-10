@@ -5,7 +5,7 @@ const StyledTags = styled.div`
     display: flex;
     align-items: center;
     font-weight: 600;
-    font-size: ${props => (props.size ? `${props.size}rem` : '1.2rem')};
+    font-size: ${props => (props.size ? `${props.size}rem` : '1.4rem')};
     text-transform: uppercase;
     position: ${props => props.card && 'absolute'};
     bottom: 2rem;
