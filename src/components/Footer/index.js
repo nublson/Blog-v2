@@ -1,7 +1,20 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from './styles'
 
 const Footer = () => {
+    const { site } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    author
+                }
+            }
+        }
+    `)
+
+    const { author } = site.siteMetadata
+
     return (
         <Container>
             <p>
@@ -11,7 +24,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Nubelson Fernandes
+                    {author}
                 </a>
             </p>
         </Container>

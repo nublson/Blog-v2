@@ -1,20 +1,25 @@
 module.exports = {
     siteMetadata: {
-        title: `Blog | Nubelsondev`,
+        title: `Nubelson Dev Blog | Nubelson Fernandes`,
+        titleTemplate: `Blog | nubelsondev`,
         description: `Learn Javascript, Node, React and React Native by building things`,
-        keywords: `Nubelson Blog, Nubelson, Fernandes, Nubel blog, nubelsondev, full-stack developer, javascript, node, react, react native, front-end developer, web developer, mobile developer, designer`,
+        keywords: `blog do nubelson, nubelsondev, nubelsondev blog,nubelson fernandes, blog do nuno, javascript, react, node, react native, blog develop`,
         author: `Nubelson Fernandes`,
-        social: {
-            username: 'nubelsondev',
-        },
-        siteUrl: `https://www.blog.nubelson.dev`,
-        imageShare: `share.png`,
+        siteUrl: `https://blog.nubelson.dev`,
+        username: `@nubelsondev`,
+        image: `/static/share.jpg`,
     },
     plugins: [
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-robots-txt`,
+        {
+            resolve: 'gatsby-plugin-html-attributes',
+            options: {
+                lang: 'en',
+            },
+        },
         {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {

@@ -40,7 +40,7 @@ export const Info = styled.p`
 
 const BlogPost = ({ title, date, author, tags, url }) => {
     return (
-        <Container to={url}>
+        <Container to={`/${url}`}>
             <Title>{title}</Title>
             <Info>
                 {date}, by <span>{author}</span>

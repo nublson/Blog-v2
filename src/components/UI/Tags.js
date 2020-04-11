@@ -5,7 +5,7 @@ const StyledTags = styled.div`
     display: flex;
     align-items: center;
     font-weight: 600;
-    font-size: ${props => (props.size ? `${props.size}rem` : '1.4rem')};
+    font-size: 1.3rem;
     text-transform: uppercase;
     position: ${props => props.card && 'absolute'};
     bottom: 2rem;
@@ -18,7 +18,7 @@ const StyledTags = styled.div`
     p {
         color: #000;
         background-color: var(--primary);
-        padding: 0.2rem 1.2rem;
+        padding: 0.1rem 0.8rem;
         display: inline-block;
         border-radius: var(--radius);
     }
