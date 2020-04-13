@@ -1,115 +1,141 @@
 ---
 title: 'Create your own Create React App template'
-date: 2020-03-20
+date: 2020-04-13
 author: 'nubelsondev'
 tags: ['cra', 'react', 'dev']
 thumbnail: './thumbnail.jpg'
 ---
 
-## Criando o seu próprio CRA template
+Starting a project from scratch with React is not something developers like so much, you need to learn and configure many construction tools like [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/) and [ESLint](https://eslint.org/).
 
-### 1- Starting a React project
+To the delight of the developers, Facebook created the [Create React App](https://create-react-app.dev/), a way to create React single-page applications quickly, where you only need to worry about the development of your application since all the construction tools are already configured automatic. While it's a great help, some tools like React Router, Linter, Prettier and Styled-components (because I don't believe you still use .css files) still need to be added and configured and this makes your development unproductive whenever you go develop applications that use the same technologies and configurations. Custom templates can help you with this, they are a way to generate an application with all the tools and settings you need. In this article, you will follow me through the process of developing my own CRA template with Styled-components, Layout and GlobalStyles.
 
-Para iniciar a construção de um CRA template, precisamos começar gerando um novo projeto com o CRA padrão
+There are currently only 2 official CRA templates:
 
+1. [cra-template](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/README.md) - standard template using Javascript vanilla
+2. [cra-template-typescript](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) - advanced template using Typescript
+
+You can generate the CRA from a template by simply providing the flag —template.
 ```bash
-$ yasn create-react-app your-template-name
+$ npx create-react-app my-app — template typescript
+# or
+$ yarn create react-app my-app — template typescript
 ```
 
-Feito isso, iremos abrir o nosso projeto no **VSCode** e editar o arquivo _package.json_ alterando o name para "_cra-template-your-template-name_".
 
-> É extremamente importante que o name inicie com o prefixo "cra-template-" porque só assim o CRA identificará o seu projeto como um template.
+## Creating your own CRA template
+The creation of the template will be summarized in 3 steps:
 
-### 2- Remove deps and setting up tools
+1. Starting a project
+2. Removing and adding dependencies and configuration tools
+3. Creating the template
 
-Remova tudo o que você não precisa do CRA e adicione tudo o que você precisa
+After that, we will focus on publishing our template on NPM.
 
-> Aqui iremos configurar a nossa aplicação React à nossa maneira, adicionando todas as bibliotecas que queremos que estejam instaladas e configuradas como padrão. Neste tutorial irei criar um template que utilizarei em todos os meus projetos, com Styled-Components, Layout e Theme Switcher configurados.
+### 1- Starting a project
 
-![image](./thumbnail.jpg)
+To start creating your CRA template you need to generate a new project with the standard CRA:
 
-Veja o código [aqui](https://github.com/nubelsondev).
+```bash
+$ yarn create react-app your-cra-template-name
+```
 
-### 3- Create a template
+When your project is generated, change the name in your `package.json` to **_cra-template-[your-template-name]_**
 
-Quando o nosso projeto estiver pronto para se tornar um template, precisamos fazer alguns preparos.
+> It is important that it starts with the prefix cra-template-, this way the CRA will know that this will be a template.
 
-#### 3.1 - Create template folder
+```json
+/* package.json */
+{
+	"name": "cra-template-nubelsondev",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {...},
+	"scripts": {...},
+	"eslintConfig": {...},
+	"browserslist": {
+		"production": [...],
+		"development": [...]
+	}
+}
+```
 
-Crie na raiz do seu projeto a pasta **`template`**
+### 2- Removing and adding dependencies and configuration tools
+
+Now it's time to configure your template, remove and add the dependencies and settings you need for your template.
+
+> I created a template with **Styled-Components**, **Layout** configuration and GlobalStyles.
+
+![nubelsondev CRA template](./thumbnail.jpg)
+Source code [here](https://github.com/nubelsondev/cra-template-nubelsondev/tree/8b8485b1f831718f36712813a3b366acc645e71d).
+
+### 3- Creating the template
+When your project is ready to become a template you will need to prepare a few things:
+
+#### 3.1- Create the `template` folder
+Create the template folder at the root of your project
 
 ```bash
 $ mkdir template
 ```
 
-#### 3.2 - Add gitignore file to the template folder
+#### 3.2- Add a `gitignore` file to the` template` folder
 
-Adicione um arquivo gitignore dentro da pasta template.
-
-> Você pode copiar o arquivo o gitignore padrão criado com o CRA, só não se esqueça de remover o " . "!
+Create a gitignore file inside the template folder. You can copy the default CRA gitignore just don't forget to remove the '. 'at the beginning of the file name.
 
 ```bash
 $ cp .gitignore template/gitignore
 ```
 
-> É importante que o arquivo gitignore dentro da pasta template esteja sem o " . ". Desta forma o CRA saberá que você está criando um template e ele substituirá este asrquivo posteriormente, caso contrário você receberá erros de compilação.
+> It is important that the gitignore file inside the template page is without the ' **.** '! This way the CRA will know that you are creating a template and this will replace this file later. Otherwise you will receive errors in the build.
 
-#### 3.3 - Create `template.json` at your project root
+#### 3.3- Create the `template.json` file at the root of your project
 
-Liste todas as suas dependências e scripts que você precisa para o novo aplicativo criado a partir do seu template. Por exemplo:
+List all the dependencies and added scripts you need in your application created from your template. For example:
 
 ```json
 {
-    "dependencies": {
-        "styled-components": "^5.0.1"
-    },
-    "scripts": {}
+	"dependencies": {
+		"styled-components": "^5.1.0"
+	},
+	"scripts": {}
 }
 ```
 
-#### 3.4 - Copy `src/` and `public/` folders into your `template/` folder
+> It is important that you list only the dependencies and scripts that you have added and created.
 
-Agora você deve copiar a sua pasta `src` e `public` para dentro de `template`
-
+#### 3.4- Copy the src and public folders to the template folder
 ```bash
 $ cp -a ./src/. template/src && cp -a ./public/. template/public
 ```
 
-#### 3.5 - Copy any configuration files that you might want to include with your template
-
-Aqui você deve copiar e configurar os arquivos isolados que você quer incluir no seu template como por exemplo
+#### 3.5- Copy any configuration files you want to include in your template
+> Here you will copy your configuration files as `.eslintignore`, ` .eslintrc`, `.prettierrc`, ` tsconfig.json` and `README.md`.
 
 ```bash
-cp .eslintignore .eslintrc .prettierrc tsconfig.json README.md template/
+$ cp README.md template/
 ```
 
-Pronto, temos o nosso template criado e corretamente configurado, agora vamos publicá-lo no npm para que seja possível usá-lo.
-
-## Prepare the template for publishing to the NPM
+## Preparing the template to be published on NPM
 
 ### Prepare your `package.json`
 
-Aqui você irá preparar o seu package.json adicionando a licença, autor, descrição, keywords, URL do repositório, URL para correção de possíveis bugs e etc. Veja o meu...
+Add license, author, description, keywords, repository link, link to report bugs, etc. You can use [my package.json](https://github.com/nubelsondev/cra-template-nubelsondev/blob/master/package.json) as a good example.
 
-### Add `main` and `files` properties
+### Add the `main` and` files` properties
 
-É importante mostrar ao CRA onde procurar ao criar a sua aplicação pelo seu template adicionando os pontos 'main' e 'files' aos arquivos adequados.
+> It is important to tell CRA where to look for files while generating the application from their template.
 
 ```json
-{
+{ 
     “main”: “template.json”,
-    “keywords”: [
-    “react”,
-    “create-react-app”,
-    “cra-template”,
-    “template”,
-    “prettier”
-    ],
     “files”: [“template”, “template.json”]
 }
 ```
 
-### I’d suggest using a pre-publish script to make it easier for incremental template updates
+### Creation of a pre-publication script (optional)
+
+> For your convenience I suggest using a pre-publication script to facilitate the process of updating the template
 
 ```json
 {
@@ -118,30 +144,37 @@ Aqui você irá preparar o seu package.json adicionando a licença, autor, descr
     "prepublishOnly": "yarn clean-files && yarn copy-files"
 }
 ```
+Add these scripts to your `package.json`
 
-### Publishing to the NPM
 
-Quando tudo estiver pronto, você poderá publicar o seu template no NPM
+### Publishing your template to NPM
 
--   Create a npm account
--   Login to npm via terminal in your root project `npm login`
--   Publish your package to the npm with public access `npm publish --access public`
+When everything is ready, you can publish your template in NPM, for that you need:
 
-## Usage
+* [Create an account](https://www.npmjs.com/signup) on NPM
+* Log in to NPM from the terminal
+
+    At the root of your project, log in to NPM using your credentials
+    ```bash
+    $ npm login
+    ```
+
+* Publish your template (package) with public access
+    
+    ```bash
+    $ npm publish --access public
+    ```
+
+> If your package name is already in use, you will receive an error in this step - try another name or package with scope.
+
+When the publication is successful, you can start using it.
 
 ```bash
 $ npx create-react-app your-project-name --template nubelsondev
-
+# Or
 $ yarn create react-app your-project-name --template nubelsondev
 ```
 
-O comando npm instala a versão estável mais recente do CRA a partir do npm
+That's it, so we created and published our own CRA template, now, if you want, you can add Continuous Integration (CI) services like **[Github Actions](https://github.com/features/actions)**, **[Jenkins](https://jenkins.io/)** or **[Travis CI](https://travis-ci.org/)** which by chance would make a good story for a next Blog Post.
 
-O parámetro —template aponta para o template que você deseja usar, note que o prefixo cra-template- é omitido.
-
-```javascript
-const name = 'Nubelson'
-const age = 23
-
-console.log(`My name is ${name} and I am ${age} years old!`)
-```
+See you in the next post, thanks.

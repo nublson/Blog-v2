@@ -61,4 +61,9 @@ export const StyledBody = styled.div`
     pre {
         padding: 1rem 2rem;
     }
+
+    ol,
+    ul {
+        margin-left: 2rem;
+    }
 `
