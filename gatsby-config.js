@@ -6,14 +6,21 @@ module.exports = {
         keywords: `blog do nubelson, nubelsondev, nubelsondev blog,nubelson fernandes, blog do nuno, javascript, react, node, react native, blog develop`,
         author: `Nubelson Fernandes`,
         siteUrl: `https://blog.nubelson.dev`,
+        googleVerification: `eRPme2Wzm2_bDtofxz7nq-JW-wFm2QL07QhIzJC6Xtk`,
         username: `@nubelsondev`,
-        image: `/static/share.jpg`,
+        image: `./share.jpg`,
     },
     plugins: [
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-robots-txt`,
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 'UA-158868946-2',
+            },
+        },
         {
             resolve: 'gatsby-plugin-html-attributes',
             options: {
