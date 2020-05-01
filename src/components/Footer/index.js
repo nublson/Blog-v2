@@ -39,16 +39,26 @@ const Footer = () => {
                 </a>
             </p>
             <SociaslGroup>
-                <SocialLink url={`https://github.com/${username}`}>
+                <SocialLink
+                    title="Github Profile"
+                    url={`https://github.com/${username}`}
+                >
                     <SocialIcon icon={faGithub} />
                 </SocialLink>
-                <SocialLink url={`https://www.instagram.com/${username}/`}>
+                <SocialLink
+                    title="Instagram Profile"
+                    url={`https://www.instagram.com/${username}/`}
+                >
                     <SocialIcon icon={faInstagram} />
                 </SocialLink>
-                <SocialLink url={`https://twitter.com/${username}`}>
+                <SocialLink
+                    title="Twitter Profile"
+                    url={`https://twitter.com/${username}`}
+                >
                     <SocialIcon icon={faTwitter} />
                 </SocialLink>
                 <SocialLink
+                    title="Youtube Channel"
                     url={
                         'https://www.youtube.com/channel/UCYj7SSTqryZNO-lGjYlIx3Q/'
                     }

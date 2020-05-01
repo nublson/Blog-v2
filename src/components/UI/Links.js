@@ -10,9 +10,14 @@ const StyledLink = styled.a`
     }
 `
 
-export const SocialLink = ({ children, url }) => {
+export const SocialLink = ({ children, url, title }) => {
     return (
-        <StyledLink href={url} target="_blank" rel="noopener noreferrer">
+        <StyledLink
+            href={url}
+            title={title}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
             {children}
         </StyledLink>
     )

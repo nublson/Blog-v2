@@ -5,7 +5,7 @@ module.exports = {
         description: `Learn Javascript, Node, React and React Native by building things`,
         keywords: `blog do nubelson, nubelsondev, nubelsondev blog,nubelson fernandes, blog do nuno, javascript, react, node, react native, blog develop`,
         author: `Nubelson Fernandes`,
-        siteUrl: `https://blog.nubelson.dev`,
+        siteUrl: `https://nubelson.dev`,
         googleVerification: `eRPme2Wzm2_bDtofxz7nq-JW-wFm2QL07QhIzJC6Xtk`,
         username: `nubelsondev`,
         image: `./share.jpg`,
