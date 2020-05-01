@@ -62,8 +62,11 @@ const SEO = ({ title, description, image, pathname, article }) => (
                             name="twitter:card"
                             content="summary_large_image"
                         />
-                        {username && (
-                            <meta name="twitter:creator" content={username} />
+                        {`@${username}` && (
+                            <meta
+                                name="twitter:creator"
+                                content={`@${username}`}
+                            />
                         )}
                         {seo.title && (
                             <meta name="twitter:title" content={seo.title} />

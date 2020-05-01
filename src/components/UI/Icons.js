@@ -14,8 +14,8 @@ const IconWrapper = styled.div`
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
-    font-size: 2.5rem;
-    color: var(--primary);
+    font-size: 2.4rem;
+    color: var(--text_highlight);
 `
 
 export const MoreIcon = () => {
@@ -24,4 +24,8 @@ export const MoreIcon = () => {
             <StyledIcon icon={faEllipsisH} />
         </IconWrapper>
     )
+}
+
+export const SocialIcon = ({ icon }) => {
+    return <StyledIcon icon={icon} />
 }

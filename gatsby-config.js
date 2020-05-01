@@ -7,7 +7,7 @@ module.exports = {
         author: `Nubelson Fernandes`,
         siteUrl: `https://blog.nubelson.dev`,
         googleVerification: `eRPme2Wzm2_bDtofxz7nq-JW-wFm2QL07QhIzJC6Xtk`,
-        username: `@nubelsondev`,
+        username: `nubelsondev`,
         image: `./share.jpg`,
     },
     plugins: [
