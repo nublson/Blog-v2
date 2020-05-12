@@ -1,14 +1,13 @@
 module.exports = {
     siteMetadata: {
-        title: `Nubelson Dev Blog | Nubelson Fernandes`,
-        titleTemplate: `Blog | nubelsondev`,
-        description: `Learn Javascript, Node, React and React Native by building things`,
-        keywords: `blog do nubelson, nubelsondev, nubelsondev blog,nubelson fernandes, blog do nuno, javascript, react, node, react native, blog develop`,
+        title: `Nubelson Fernandes`,
+        titleTemplate: `nubelsondev | Full Stack Developer`,
+        description: `A Full Stack Developer 👨🏽‍💻, Blogger ✍🏽 and UI Designer 👨🏽‍🎨 trying to be a Youtuber 🎥 and Podcaster 🎙️ too. Let's see where this is going. 💯`,
         author: `Nubelson Fernandes`,
         siteUrl: `https://nubelson.dev`,
         googleVerification: `eRPme2Wzm2_bDtofxz7nq-JW-wFm2QL07QhIzJC6Xtk`,
         username: `nubelsondev`,
-        image: `./share.jpg`,
+        image: `./static/share.jpg`,
     },
     plugins: [
         `gatsby-plugin-styled-components`,
